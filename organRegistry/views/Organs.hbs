@@ -1,0 +1,133 @@
+<!-- 
+Citation for the following file 
+Date: 08/04/2023
+Based on CS340 starter code
+URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/ 
+ -->
+
+<h1>Organs Information</h1>
+<nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Organs">Organs</a></li>
+                <li><a href="/Recipients">Recipients</a></li>
+                <li><a href="/Donors">Donors</a></li>
+                <li><a href="/Transplants">Transplants</a></li>
+                <li><a href="/Match">Organ Recipient Match</a></li>
+                <li><a href="/List">Organ List</a></li>
+            </ul>    
+        </nav>
+
+
+{{!-- Create a table --}}
+<table id="organ-table">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            <th>Organ ID</th>
+            <th>Date Removed</th>
+            <th>Available</th>
+            <th>Donor ID, First, Last</th>
+            <th>Organ</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr data-id="{{this.idOrgans}}">
+            <td>{{this.idOrgans}}</td>
+            <td>{{formatDate this.dateRemoved}}</td>
+            <td>{{formatYN this.isAvailable}}</td>
+            <td>{{this.idDonors}}- {{this.firstName}} {{this.lastName}}</td>
+            <td>{{this.organName}}</td>
+            <td><button onclick="deleteOrgan({{this.idOrgans}})">Delete</button></td> 
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<p style="font-size: 11px">* Here we implement the deletion of a record in a M:N relationship. Our M:N relationship
+    is the Organ Recipient Match, which contains data from the Organs table and Recipients table. 
+    When you delete an organ from the above table, any records that contain that organ 
+    in the M:N table will also be deleted.
+</p>
+
+
+<!-- /views/index.hbs -->
+<div class="container-for-two-forms">
+{{!-- Form to add a record to the table  --}}
+<div class="form-div">
+<h2>Add a new Organ</h2>
+<p>To add a new organ, please enter its information below and click 'Submit'!</p>
+<form id="add-organ-form-ajax">
+    <label for="input-dateRemoved">Date Removed </label>
+    <input type="date" name="input-dateRemoved" id="input-dateRemoved">
+
+    <label for="input-isAvailable">Is Available: </label>
+    <select name="input-isAvailable" id="input-isAvailable">
+        <option value="">Select Availability</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+    
+    <label for="input-idDonor">Donor ID: </label>
+    <select name="input-idDonor" id="input-idDonor">
+        <option value="">Select a Donor</option>
+        {{#each donors}}
+        <option value="{{this.idDonors}}">{{this.idDonors}}- {{this.firstName}} {{this.lastName}}</option>
+        {{/each}}
+    </select>
+
+
+    <label for="input-organList">Organ Donated: </label>
+    <select name="input-organList" id="input-organList">
+        <option value="">Select an Organ Name ID</option>
+        {{#each organList}}
+        <option value="{{this.idOrganList}}">{{this.organName}}</option>
+        {{/each}}
+    </select>
+
+    <input type="submit">
+</form>
+</div>
+
+
+
+{{!-- Form to update a record to the table  --}}
+<div class="form-div">
+<h2>Updating an Organs Information</h2>
+<p>To update an Organs information, fill in the below text boxes</p>
+<form id="update-organ-form-ajax">
+
+    <label for="input-id">Organ ID: </label>
+    <select name="input-organID" id="organSelect">
+        <option value="test">Select an Organ</option>
+        {{#each data}}
+        <option value="{{this.idOrgans}}">{{this.idOrgans}}</option>
+        {{/each}}
+    </select>
+
+    <label for="input-isAvailable">Is Available: </label>
+    <select name="input-isAvailable" id="input-isAvailable-update">
+        <option value="">Select Availability</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+    <input type="submit">
+
+</form>
+</div>
+</div>
+
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="./js/helperFunctions.js"></script>
+<script src="./js/organ/add_organ.js"></script>
+<script src="./js/organ/update_organ.js"></script>
+<script src="./js/organ/delete_organ.js"></script>

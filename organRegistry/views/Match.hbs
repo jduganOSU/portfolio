@@ -1,0 +1,126 @@
+<!-- 
+Citation for the following file 
+Date: 08/04/2023
+Based on CS340 starter code
+URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/ 
+ -->
+
+<h1>Match Information</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Organs">Organs</a></li>
+                <li><a href="/Recipients">Recipients</a></li>
+                <li><a href="/Donors">Donors</a></li>
+                <li><a href="/Transplants">Transplants</a></li>
+                <li><a href="/Match">Organ Recipient Match</a></li>
+                <li><a href="/List">Organ List</a></li>
+            </ul>    
+        </nav>
+
+
+
+{{!-- Create a table --}}
+<table id="match-table">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            <th>Match ID</th>
+            <th>Organ ID</th>
+            <th>Recipient</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr data-id={{this.idMatch}}>
+            <td>{{this.idMatch}}</td>
+            <td>{{this.idOrgan}}</td>
+            <td>{{this.idRecipient}}- {{this.firstName}} {{this.lastName}}</td>
+            <td><button onclick="deleteMatch({{this.idMatch}})">Delete</button></td> 
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+<div class="container-for-two-forms">
+{{!-- Form to add a record to the table  --}}
+<div class="form-div">
+<h2>Add a new Match</h2>
+<p>To add a new match, please enter the below info and 'Submit'!</p>
+<form id="add-match-form-ajax">
+    
+    <label for="input-idOrgan-match">Organ ID: </label>
+    <select name="input-idOrgan-match" id="input-idOrgan-match">
+        <option value="">Organ ID</option>
+        {{#each organs}}
+        <option value="{{this.idOrgans}}">{{this.idOrgans}}</option>
+        {{/each}}
+    </select>
+
+    <label for="input-idRecipient-match">Recipient ID: </label>
+    <select name="input-idRecipient-match" id="input-idRecipient-match">
+        <option value="">Recipient ID</option>
+        {{#each recipients}}
+        <option value="{{this.idRecipients}}">{{this.idRecipients}}- {{this.firstName}} {{this.lastName}}</option>
+        {{/each}}
+    </select>
+
+
+    <input type="submit">
+</form>
+</div>
+
+{{!-- Form to update a record to the table  --}}
+<div class="form-div">
+<h2>Updating a Match</h2>
+<p>To update a Match, make a selection from the drop down menu</p>
+<form id="update-match-form-ajax">
+
+    <label for="input-matchID-match">Match ID: </label>
+    <select name="input-matchID-match" id="input-matchID-match">
+        <option value="">Select a Match</option>
+        {{#each data}}
+        <option value="{{this.idMatch}}">{{this.idMatch}}</option>
+        {{/each}}
+    </select>
+
+     <label for="update-organID-match">Organ ID: </label>
+    <select name="update-organID-match" id="update-organID-match">
+        <option value="">Organ ID: </option>
+        {{#each organs}}
+        <option value="{{this.idOrgans}}">{{this.idOrgans}}</option>
+        {{/each}}
+    </select>
+
+    <label for="update-recipientID-match">Recipient ID: </label>
+    <select name="update-recipientID-match" id="update-recipientID-match">
+        <option value="">Recipient ID: </option>
+        {{#each recipients}}
+        <option value="{{this.idRecipients}}">{{this.idRecipients}}- {{this.firstName}} {{this.lastName}}</option>
+        {{/each}}
+    </select>
+
+    <input type="submit">
+
+</form>
+<p style="font-size:11px">* Here is the ability to update a M:N relationship. This update form 
+    allows the user to update a record in the Organ Recipient Match table of the database, 
+    which is the intersection table for the M:N relationship. 
+</div>
+</div>
+
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="./js/helperFunctions.js"></script>
+<script src="./js/match/add_match.js"></script>
+<script src="./js/match/delete_match.js"></script>
+<script src="./js/match/update_match.js"></script>

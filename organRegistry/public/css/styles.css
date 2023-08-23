@@ -1,0 +1,94 @@
+/* styles.css */
+
+/* --- Global Styles --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+}
+
+/* --- Table Styles --- */
+table {
+    width: 75%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 2.5px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+th {
+    background-color: #e0e0e0; 
+    font-weight: normal;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+/* --- Form Styles --- */
+.form-div {
+    margin: 20px 0;  
+    padding: 10px;   
+}
+
+.container-for-two-forms {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-for-two-forms .form-div {
+    width: 48%; 
+}
+
+form label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+form input[type="text"], form input[type="number"], form select, form input[type="date"] {
+    display: block;
+    width: 50%; 
+    margin-bottom: 10px; 
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333; 
+    display: flex;          
+    justify-content: space-around; 
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    color: white;             
+    text-align: center;
+    padding: 5px;
+    text-decoration: none;   
+    transition: 0.3s;        
+}
+
+nav li a:hover {
+    background-color: #111;
+}

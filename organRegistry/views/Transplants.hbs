@@ -1,0 +1,104 @@
+<!-- 
+Citation for the following file 
+Date: 08/04/2023
+Based on CS340 starter code
+URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/ 
+ -->
+
+<h1>Transplants Information</h1>
+<nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Organs">Organs</a></li>
+                <li><a href="/Recipients">Recipients</a></li>
+                <li><a href="/Donors">Donors</a></li>
+                <li><a href="/Transplants">Transplants</a></li>
+                <li><a href="/Match">Organ Recipient Match</a></li>
+                <li><a href="/List">Organ List</a></li>
+            </ul>    
+        </nav>
+
+
+{{!-- Create a table --}}
+<table id="transplant-table">
+
+    {{!-- Header section --}}
+    <thead>
+
+        {{!-- For just the first row, we print each key of the row object as a header cell so we
+        know what each column means when the page renders --}}
+        <tr>
+            <th>Transplant ID</th>
+            <th>Date Completed</th>
+            <th>Hospital Performed</th>
+            <th>Zip</th>
+            <th>Success</th>
+            <th>Organ ID</th>
+            <th>Recipient</th>
+        </tr>
+    </thead>
+
+    {{!-- Body section --}}
+    <tbody>
+
+        {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+        {{#each data}}
+        <tr>
+            <td>{{this.idTransplants}}</td>
+            <td>{{formatDate this.dateCompleted}}</td>
+            <td>{{this.hospital}}</td>
+            <td>{{this.zip}}</td>
+            <td>{{formatYN this.isSuccess}}</td>
+            <td>{{this.idOrgan}}</td>
+            <td>{{this.idRecipients}}- {{this.firstName}} {{this.lastName}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+
+{{!-- Form to add a record to the table  --}}
+<div class="form-div">
+<h2>Add a new Transplant</h2>
+<p>To add a new transplant, please enter the below info and 'Submit'!</p>
+<form id="add-transplant-form-ajax">
+    <label for="input-dateCompleted-transplant">Date Completed </label>
+    <input type="date" name="input-dateCompleted-transplant" id="input-dateCompleted-transplant">
+
+    <label for="input-zip-transplant">Zip of Hospital: </label>
+    <input type="number" name="input-zip-transplant" id="input-zip-transplant" placeholder="Hospital zip..">
+
+    <label for="input-isSuccess-transplant">Success: </label>
+    <select name="input-isSuccess-transplant" id="input-isSuccess-transplant">
+        <option value="">Success?</option>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+    </select>
+
+    <label for="input-hospital-transplant">Hospital of Transplant: </label>
+    <input type="text" name="input-hospital-transplant" id="input-hospital-transplant" placeholder="Name of Hospital..">
+
+    <label for="input-idOrgan-transplant">Organ ID: </label>
+    <select name="input-idOrgan-transplant" id="input-idOrgan-transplant">
+        <option value="">Organ ID</option>
+        {{#each organs}}
+        <option value="{{this.idOrgans}}">{{this.idOrgans}}</option>
+        {{/each}}
+    </select>
+
+    <label for="input-idRecipient-transplant">Recipient ID: </label>
+    <select name="input-idRecipient-transplant" id="input-idRecipient-transplant">
+        <option value="">Recipient ID</option>
+        {{#each recipients}}
+        <option value="{{this.idRecipients}}">{{this.idRecipients}}- {{this.firstName}} {{this.lastName}}</option>
+        {{/each}}
+    </select>
+
+
+    <input type="submit">
+</form>
+</div>
+
+{{!-- Embed our javascript to handle the DOM manipulation and AJAX request --}}
+<script src="/js/helperFunctions.js"></script>
+<script src="./js/transplants/add_transplant.js"></script>

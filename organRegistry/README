@@ -1,0 +1,13 @@
+Organ Transplant Tracking Application
+Overview
+This application aids in managing and tracking organ transplants by maintaining information about donors, recipients, organs, and transplantation events. Developed using Node.js, Express, and Handlebars, it serves as a valuable tool for hospitals and medical organizations.
+
+Features
+Dashboard: A centralized interface to view all transplant-related data.
+Organ Management: Add, update, or remove details about available organs.
+Recipient Information: Track all organ recipients with vital information like blood type, priority, and medical condition.
+Donor Information: Register and manage donors, with an emphasis on vital statistics and organ compatibility.
+Transplantation Tracking: Monitor ongoing and completed transplants.
+Matchmaking: Helps in finding the best organ-recipient match based on specific criteria.
+
+Created by Jack Dugan and Michelle Huang August 2023.
