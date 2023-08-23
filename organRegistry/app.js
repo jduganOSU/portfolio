@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
+const path = require('path');
 var exphbs = require('express-handlebars');
 var hbs = exphbs.create({extname: 'hbs'});
 
 router.use(express.json())
 router.use(express.urlencoded({extended: true}))
-router.use(express.static('public'))
+router.use('/css', express.static(path.join(__dirname, 'public', 'css')));
 
 require('./views/helpers/handlebars-helpers')(hbs);
 

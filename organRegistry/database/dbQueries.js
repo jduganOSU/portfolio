@@ -92,7 +92,6 @@ function getTransplantsPage(){
                         JOIN "Recipients" ON "Transplants"."idRecipient" = "Recipients"."idRecipients"
                         ORDER BY "Transplants"."idTransplants"`;
         pool.query(query, (error, results) => {
-            console.log(results);
             if (error) reject(error);
             else resolve(results);
         });
