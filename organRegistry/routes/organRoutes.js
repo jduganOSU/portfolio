@@ -3,22 +3,6 @@ const router = express.Router();
 const dbQueries = require('../database/dbQueries');
 
 
-// page load
-/*
-router.get('/', async (req, res) => {
-  try {
-    const organs = await dbQueries.getOrgans();
-    const donorsID = await dbQueries.getDonors();
-    const organList = await dbQueries.getOrganList();
-
-    res.render('Organs', {data: organs, donors: donorsID, organList: organList});
-  } catch (error) {
-    console.error(error);
-    res.sendStatus(500);
-  }
-});
-*/
-
 router.get('/', async (req, res) => {
   try {
     const organs_data = await dbQueries.getOrgansPage();
