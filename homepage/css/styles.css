@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+
+nav {
+    margin: 2rem 0;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ... Existing styles ... */
+
+/* Intro section styles */
+.intro-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Featured projects layout */
+.featured-projects {
+    display: flex;  /* This makes child divs sit side-by-side */
+    flex-wrap: wrap; /* This allows the projects to wrap to the next line if there's not enough space */
+    justify-content: space-between; /* This adds space between the projects */
+}
+
+.project-section {
+    flex: 0 0 calc(50% - 10px); /* This makes each project take up half the width minus a little space for margin */
+    box-sizing: border-box; /* Ensures padding and borders are included in the width */
+    padding: 1rem;
+    border: 1px solid #ccc; /* Optional border */
+    margin-bottom: 20px; /* Space at the bottom of each project */
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+
+.project-link:hover {
+    background-color: #555;
+}
