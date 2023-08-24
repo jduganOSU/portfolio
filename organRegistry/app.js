@@ -6,7 +6,9 @@ var hbs = exphbs.create({extname: 'hbs'});
 
 router.use(express.json())
 router.use(express.urlencoded({extended: true}))
-router.use('/css', express.static(path.join(__dirname, 'public', 'css')));
+router.use('/public', express.static(path.join(__dirname, 'public')));
+
+
 
 require('./views/helpers/handlebars-helpers')(hbs);
 

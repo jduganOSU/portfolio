@@ -1,8 +1,3 @@
-// Citation for the following file
-// Date: 08/04/2023
-// Based on CS340 starter code
-// URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/
-
 // Get the objects we need to modify
 let updateRecipientForm = document.getElementById('update-recipient-form-ajax');
 
@@ -42,7 +37,12 @@ updateRecipientForm.addEventListener("submit", function (e) {
             // Parse the response
             let updatedRecipients = JSON.parse(xhttp.response);
 
+            // update the table on the weboage
             updateRecipientsTable(updatedRecipients.rows);
+
+            // Clear the input fields for another transaction
+            inputRecipientId.value = '';
+            inputKnownDonor.value = '';
 
         }
         else if (xhttp.readyState == 4 && xhttp.status != 200) {

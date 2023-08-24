@@ -1,8 +1,3 @@
-// Citation for the following file
-// Date: 08/04/2023
-// Based on CS340 starter code
-// URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/
-
 // Get the objects we need to modify
 let updateOrganForm = document.getElementById('update-organ-form-ajax');
 
@@ -49,6 +44,10 @@ updateOrganForm.addEventListener("submit", function (e) {
 
             // Add the new data to the table
             updateOrgansTable(updatedOrgans.rows);
+
+            // Clear the input fields for another transaction
+            inputOrganID.value = '';
+            inputAvailability.value = '';
 
         }
         else if (xhttp.readyState == 4 && xhttp.status != 200) {

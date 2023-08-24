@@ -1,8 +1,3 @@
-// Citation for the following file
-// Date: 08/04/2023
-// Based on CS340 starter code
-// URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/
-
 function deleteMatch(idMatch) {
     // Put our data we want to send in a javascript object
     let data = {

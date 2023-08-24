@@ -1,8 +1,3 @@
-// Citation for the following file
-// Date: 08/04/2023
-// Based on CS340 starter code
-// URL: https://github.com/osu-cs340-ecampus/nodejs-starter-app/tree/main/
-
 // Get the objects we need to modify
 let updateMatchForm = document.getElementById('update-match-form-ajax');
 
@@ -46,6 +41,11 @@ updateMatchForm.addEventListener("submit", function (e) {
 
             // Add the new data to the table
             updateMatchTable(updatedMatches.rows);
+
+            // Clear the input fields for another transaction
+            inputMatchID.value = '';
+            inputOrganID.value = '';
+            inputRecipientID.value = '';
 
         }
         else if (xhttp.readyState == 4 && xhttp.status != 200) {
