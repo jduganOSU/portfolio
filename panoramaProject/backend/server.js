@@ -5,7 +5,7 @@ dotenv.config();
 const { getOpenAiResponse } = require('./controllers/openaiController'); 
 const panos = require('./controllers/databaseController')
 
-
+console.log("mongodb: ", process.env.MONGODB_CONNECT_STRING);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -24,8 +24,6 @@ app.post('/openai', getOpenAiResponse)
 // Database routes
 // Create (add) to database
 app.post('/favPanos', (req, res) => {
-    console.log('Recieved POST');
-    console.log('Req. Body: ', req.body);
     panos.createPanorama(
         req.body.latitude,
         req.body.longitude,

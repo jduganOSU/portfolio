@@ -8,7 +8,7 @@ import './styles.css'
 function App() {
   return (
 
-      <BrowserRouter>  
+      <BrowserRouter basename="/panorama">  
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/individual/:lat/:lng" element={<Individual />} />
