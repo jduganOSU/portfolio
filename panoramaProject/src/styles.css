@@ -1,0 +1,115 @@
+/* styles.css */
+
+/* Reset some browser defaults to ensure consistent styling across different browsers */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+/* Homepage map container styles */
+div {
+    text-align: center;
+}
+
+#homemap > * {
+    max-width: 90%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Homepage title */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Instruction box */
+#homepage-instructions {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+#homepage-instructions p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Map component styles can go here */
+
+/* Footer styles can go here */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 90vh;
+  }
+  
+  .content-wrap {
+    flex: 1; /* This makes the content div take up all available space, pushing the footer to the bottom */
+    height: 100%;  /* Takes full height of its parent */
+    text-align: center;
+  }
+  
+  /* Additional styles for your footer, if needed */
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+  }
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-collapse: collapse; /* Ensures borders don't double up */
+    margin: 20px auto; /* Centering the table */
+    background-color: #f4f4f4; 
+}
+
+/* Table Header Styles */
+thead {
+    background-color: #333;
+}
+
+th {
+    color: #fff;
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+}
+
+/* Table Data/Row Styles */
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Light gray border */
+}
+
+/* Hover effect for rows */
+tr:hover {
+    background-color: #e0e0e0; /* Lighter gray when you hover over a row */
+}
+
+#generate_favorite {
+    background-color: #1ea44b;  /* a pleasing shade of blue */
+    color: #ffffff;  /* white text */
+    border: none;  /* get rid of the default border */
+    border-radius: 4px;  /* rounded corners */
+    padding: 10px 15px;  /* vertical and horizontal padding */
+    font-size: 0.9em;  /* text size */
+    cursor: pointer;  /* cursor looks like a hand when over the button */
+    transition: background-color 0.3s ease;  /* smooth transition for the hover effect */
+}
+
+#generate_favorite:hover {
+    background-color: #1ea44b9e;  /* a slightly darker blue for hover */
+}
+
+#generate_favorite:focus {
+    outline: none;  /* remove the focus outline (use with caution and make sure you have other focus styles if accessibility is a concern) */
+}
