@@ -8,7 +8,10 @@ const Homepage = () => {
         <div className="content-wrap">
           <h1>Welcome to the World Map App!</h1>
           <div id="homepage-instructions">
-            <p>Click on the map to generate the nearest google maps panorama</p>
+            <p>Click on the map to generate the nearest google maps panorama, or check out the ChatGPT Generation link
+              at the bottom of the page. It allows you to enter a prompt of a location you're interested in, and ChatGPT 
+              will handle the rest!
+            </p>
           </div>
         </div>
         
