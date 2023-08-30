@@ -1,6 +1,8 @@
+const dotenv = require('dotenv');
+const path = require('path');
+dotenv.config({ path: path.join(__dirname, '.env')});
 var express = require('express');
 var router = express.Router();
-const path = require('path');
 var exphbs = require('express-handlebars');
 var hbs = exphbs.create({extname: 'hbs'});
 
