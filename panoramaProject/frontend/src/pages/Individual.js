@@ -39,7 +39,7 @@ const Individual = (props) => {
     console.log("working on save")
     const dateGenerated = new Date().toLocaleDateString();
     try {
-      const response = await fetch('panorama/favPanos', {
+      const response = await fetch('/panorama/favPanos', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 
