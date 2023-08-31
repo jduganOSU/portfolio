@@ -1,9 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const cors = require('cors');
 dotenv.config();
+const cors = require('cors');
 const { getOpenAiResponse } = require('./controllers/openaiController'); 
 const panos = require('./controllers/databaseController')
+const path = require('path');
 
 console.log("mongodb: ", process.env.MONGODB_CONNECT_STRING);
 
@@ -14,9 +15,8 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send('Backend server is running');
-});
+// Set static folder
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 
 // chatgpt route
 app.post('/openai', getOpenAiResponse)
@@ -54,6 +54,8 @@ app.post('/favPanos', (req, res) => {
     });
   });
 
-app.listen(PORT, () => {
-    console.log(`Server started on port ${PORT}`);
-});
+app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, '../frontend', 'build', 'index.html'));
+    });
+
+module.exports = app;
