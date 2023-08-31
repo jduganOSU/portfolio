@@ -8,7 +8,7 @@ const GenerateCoordinates = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/openai', {
+      const response = await fetch('/panorama/openai', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
