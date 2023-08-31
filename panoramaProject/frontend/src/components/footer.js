@@ -10,6 +10,7 @@ const Footer = () => {
         <Link to="/" style={styles.link}>Home</Link>
         <Link to="/favorites" style={styles.link}>Favorites</Link>
         <Link to="/generate" style={styles.link}>ChatGPT Generation</Link>
+        < a href="/" style={styles.link}>Main Portfolio Homepage</a>
       </div>
       <p style={styles.copyright}>© {currentYear} Jack Dugan. All rights reserved.</p>
     </footer>

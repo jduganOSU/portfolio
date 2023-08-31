@@ -25,11 +25,6 @@ app.use('/panorama', panoramaApp);
 // Serve the organRegistry project
 app.use('/organRegistry', organRegistryRouter);
 
-// Serve the panoramaProject
-app.use('/panorama', express.static(path.join(__dirname, 'panoramaProject', 'build')));
-app.get('/panorama/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'panoramaProject', 'build', 'index.html'));
- });
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
