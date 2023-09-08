@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -33,16 +37,28 @@ nav a:hover {
 footer {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 section {
     display: grid;
     place-items: center;
 }
+
+.content-wrap {
+    min-height: 100%;
+    /* Equivalent to footer height */
+    display: flex;
+    flex-direction: column;
+}
+
+footer, .content-wrap::after {
+    height: 50px;
+}
+
 
 
 /* Intro section styles */
