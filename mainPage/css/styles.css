@@ -14,7 +14,9 @@ header {
 }
 
 nav {
-    margin: 2rem 0;
+    height: 2.5rem;
+    background-color: rgb(221, 217, 217);
+    line-height: 2.5rem;
 }
 
 nav a {
@@ -27,9 +29,6 @@ nav a:hover {
     text-decoration: underline;
 }
 
-section {
-    padding: 2rem;
-}
 
 footer {
     background-color: #333;
@@ -40,13 +39,29 @@ footer {
     width: 100%;
 }
 
-/* ... Existing styles ... */
+section {
+    display: grid;
+    place-items: center;
+}
+
 
 /* Intro section styles */
 .intro-section {
     text-align: center;
-    padding: 2rem 0;
+    padding: 1rem;
+    margin-bottom: 5rem;
+    width: 80%;
 }
+
+.about-section {
+    width: 80%;
+    text-align: left;
+}
+
+.contact-content {
+    text-align: left;
+}
+
 
 /* Featured projects layout */
 .featured-projects {

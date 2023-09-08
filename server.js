@@ -17,7 +17,8 @@ app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, 'organRegistry', 'views'));
 
 // Serve the main portfolio homepage
-app.use('/', express.static('homepage'));
+app.use('/', express.static('mainPage/homepage'));
+app.use('/', express.static(path.join(__dirname, 'mainPage')));
 
 // Use the panoramaProject app for /panorama route
 app.use('/panorama', panoramaApp);

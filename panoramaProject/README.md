@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+Panorama Project
+Welcome to the Panorama Project! Dive into a world of breathtaking panoramic views. This web application lets users explore and save their favorite panoramas, providing an immersive experience of landscapes and cityscapes.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Features
+Interactive Maps: Powered by the Google Maps API, users can explore different locations around the globe in a panoramic view.
 
-In the project directory, you can run:
+Chat with AI: With the integration of OpenAI's API, users can describe a place they would like to see, and the 
+application generates the panorama based on the user's description.
 
-### `npm start`
+Save Favorites: Users can save their favorite panorama they find most interesting. Then all users of the wesbite can 
+see a list of all the panoramas our users loved. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+How It Works
+Exploring Panoramas: The application interfaces with the Google Maps API to fetch panoramic images. Users can navigate and explore these images with a simple click on the map. 
 
-### `npm test`
+AI Interaction: Users can describe a location they would like to see, and ChatGPT will generate a list of coordinates based on 
+the user prompt. From there, the application will take the coordinates and generate the nearest panoramic view.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Database Interaction: Users can save their favorite panoramas. These are stored in a MongoDB database, and users view the list of all panoramas our users found interesting. 
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Tech Stack
+Backend: Node.js, Express
+Database: MongoDB
+Frontend: React, CSS
+External APIs: Google Maps, OpenAI
