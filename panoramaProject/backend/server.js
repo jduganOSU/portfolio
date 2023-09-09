@@ -6,7 +6,6 @@ const { getOpenAiResponse } = require('./controllers/openaiController');
 const panos = require('./controllers/databaseController')
 const path = require('path');
 
-console.log("mongodb: ", process.env.MONGODB_CONNECT_STRING);
 
 const app = express();
 const PORT = process.env.PORT || 5000;

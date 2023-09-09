@@ -7,7 +7,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
-    text-align: center;
 }
 
 header {
@@ -15,12 +14,14 @@ header {
     color: #fff;
     padding: 1rem 0;
     font-size: 2rem;
+    text-align: center;
 }
 
 nav {
     height: 2.5rem;
     background-color: rgb(221, 217, 217);
     line-height: 2.5rem;
+    text-align: center;
 }
 
 nav a {
@@ -76,6 +77,22 @@ footer, .content-wrap::after {
 
 .contact-content {
     text-align: left;
+}
+
+.project-section {
+    text-align: center;
+}
+
+.project-phase {
+    margin: 15px;
+}
+
+.project-overview-section {
+    margin: 25px;
+}
+
+.feature-overview {
+    margin: 25px;
 }
 
 

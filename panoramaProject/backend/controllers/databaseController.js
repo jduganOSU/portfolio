@@ -18,9 +18,7 @@ const mdb = mongoose.connection;
 mdb.once("open", (err) => {
     if(err){
         res.status(500).json({error: "500: Server connection failed"});
-    } else {
-        console.log("Successfully connected to the MongoDB Panoramas collection.")
-    }
+    } 
 });
 
 

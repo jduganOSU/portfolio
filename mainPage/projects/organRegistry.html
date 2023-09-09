@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>organRegistry - Jack Dugan's Portfolio</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="content-wrap">
+        <header>
+            Jack Dugan's Portfolio
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about/about.html">About</a>
+            <a href="/projects/projects.html">Projects</a>
+            <a href="/contact/contact.html">Contact</a>
+        </nav>
+
+        <section>
+            <!-- Project Big Picture Section -->
+            <div class="project-overview-section">
+                <h2>Organ Registry Project</h2>
+                <p class="project-description">
+                    The Organ Registry was built as the final project for my Databases course. The main goal was to 
+                    implement a database, however the project required a user to be able to interact with the database 
+                    and perform CRUD operations. So while the project was build for a databases course, it required 
+                    us to create a functional application using many Web Development concepts. 
+                </p>
+                <p>
+                    This project got me very comfortable to making API requests within the application. For every CRUD operation, 
+                    there had to be a call to the backend of the application, which would handle the attempted operation. The project
+                    also taught me the importance of keeping an organized project. About a quarter of the way through the project, 
+                    I had all the 'Routes' in the app.js file. Realizing I still had many more routes to implement, I stopped 
+                    the development and took a day to reorganize the project. The result was separating the project files into views,
+                    routes, public (which contains the Javascript that handled the CRUD operations and the CSS file), and lastly a database 
+                    directory. This made a huge difference in future project development. 
+                </p>
+                <div class="project-overview-section-content">
+                    <h3>Technologies Used:</h3>
+                    <ul>
+                        <li>Handlebars</li>
+                        <li>Node.js</li>
+                        <li>Express</li>
+                        <li>PostgreSQL</li>
+                        <!-- Add other technologies as needed -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Before, During, After Section -->
+            <div class="project-details-section">
+                <div class="project-phase">
+                    <h3>Before:</h3>
+                    <p>
+                        The most important aspect of the project was creating the database. There were certain parameters we needed to fulfill 
+                        for the class, including at least one many-to-many relationship. Here is the Schema for the database: 
+                    </p>
+                    <img src="/images/organRegistry schema.png" alt="Description of Image">
+                </div>
+
+                <div class="project-phase">
+                    <h3>During:</h3>
+                    <p>
+                        As mentioned earlier, about a quarter of the way through I completely reorganized the project. This helped me 
+                        understand how much clearer and easy to comprehend a project becomes when you organize things appropriately. 
+                        Handlebars was used because that's just what the instructor used in their example. I didn't have a problem using 
+                        it and picked up on the syntax. I had never heard of handlebars before this project and don't see any jobs 
+                        or companies discussing it, so I'm not sure if/when I'll be using it again. 
+                    </p>
+                </div>
+
+                <div class="project-phase">
+                    <h3>After:</h3>
+                    <p>
+                        If this application were going to be actually used, there are some things that would need to be added. Some entities do not 
+                        have all 4 CRUD operations implemented, because this was not a requirement for the project. I could implement
+                        them for my portfolio, however I think I have already demonstrated the ability to implement these operations. Additionally, 
+                        the front end of the project could be better.
+                    </p>
+                    <p>
+                        Lastly, the Organ Recipient Match could be taken a step further. The idea behind the 'Organ Recipient Match' entity 
+                        was that the Registry app would analyze the Organs donated and Recipients (people who need a new organ), and if 
+                        the Organ would be a match for the Recipient, that match would be stored in the 'Organ Recipient Match' table. A few things
+                        that stopped me from that implementation is that I do not know exactly what determines a good match. The thought was 
+                        if the blood types match and the Organ Donor's zip code was within a certain radius of the recipient, the program would 
+                        match those two and add them to the 'Organ Recipient Match' table. However, this was not a requirement of the project, 
+                        and frankly this implementation would be a step above the purpose of the project in my portfolio. Additionally 
+                        I assume there is more that goes into matching an Organ to a Recipient.
+                    </p>
+                </div>
+
+                <div class="final-thoughts">
+                    <h3>Final Thoughts</h3>
+                    <p>
+                        I believe this project displays my skills in full stack development. The Registry app makes use of a backend, 
+                        gathering data from a database and implements the logic for CRUD operations on that database. The front end, while
+                        somewhat basic, is easy to understand. 
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2023 Jack Dugan. All rights reserved.
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jack Dugan - How the Application Works</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="content-wrap">
+        <header>
+            Jack Dugan's Portfolio
+        </header>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="/about/about.html">About</a>
+            <a href="/projects/projects.html">Projects</a>
+            <a href="/contact/contact.html">Contact</a>
+        </nav>
+
+        <section>
+            <section>
+                <!-- Project Big Picture Section -->
+                <div class="project-overview-section">
+                    <h2>Panorama Project</h2>
+                    <p class="project-description">
+                        The Panorama Project was an idea I had for an application, mostly just to test myself to see if I could do it. 
+                        While not perfect, I am happy with the project and think it is about 90% of what would be the finished product. 
+                    </p>
+                    <p>
+                        The idea behind this project started when I was using Google Maps. Occasionally, when bored, I would explore the Google 
+                        Maps page. One thing I'd like to do is go to a place I had never been before, like the Sahara Desert, and look at the 
+                        street view images there. For example,
+                        <a href="https://www.google.com/maps/@29.2074517,25.4358709,3a,75y,150.85h,92.92t/data=!3m8!1e1!3m6!1sAF1QipPD0kvSjuT2tkYNMGyNk70_B85gIl0JdogsyXHY!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPD0kvSjuT2tkYNMGyNk70_B85gIl0JdogsyXHY%3Dw203-h100-k-no-pi-0-ya125.40241-ro-0-fo100!7i8704!8i4352?entry=ttu" target="_blank">
+                            here is a street view image of a spot in the Sahara Desert.
+                        </a>
+                        The idea for the project would be to allow the user to click on a map, and the application would take the user to the nearest 
+                        Google Maps street view image, which are all panorama images. 
+                    </p>
+                    <div class="project-overview-section-content">
+                        <h3>Technologies Used:</h3>
+                        <ul>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>Express</li>
+                            <li>MongoDB</li>
+                            <!-- Add other technologies as needed -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="application-walkthrough">
+                    <h2 style="margin: 15px">Application Walkthrough</h2>
+                    <div class="feature-overview">
+                        <h3>Homepage</h3>
+                        <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/Homepage.js" target="_blank">
+                            Link to the Homepage code.
+                        </a></p>
+                        <p>
+                            The application opens up to the homepage. There are some simple instructions on the 
+                            homepage that informs the user how to interact with the application. 
+                            The homepage code is simple, but contains 
+                            a component called MapComponent. 
+                            <a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/components/worldmap.js" target="_blank">
+                                Here is the code to the MapComponent.
+                            </a>
+                            The MapComponent is a Google Maps API Map. There is functionality within 
+                            the MapComponent code that allows the user to click on the map, and the coordinates of that click are 
+                            recorded. Once the user clicks on the map, the MapComponent navigates the user to a new webpage, called 
+                            'Individual'. This occurs in line 42 of the MapComponent code. The latitude and longitude coordinates are 
+                            contained within the new URL the user is sent to, which is important, because the 'Individual' needs
+                            these coordinates to perform some tasks
+                        </p>
+                    </div>
+                    <div class="feature-overview">
+                        <h3>Individual Page</h3>
+                        <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/Individual.js" target="_blank">
+                            Link to the Individual Page code
+                        </a></p>
+                        <p>
+                            Next we go to the individual page. As stated earlier, the individual page makes use of the latitude and longitude coordinates
+                            that are in the URL by using useParams. The Individual page then uses Google Maps API to find a panorama within the radius
+                            of the given coordinates. It does not actually get the panorama view at this point, rather 
+                            it returns the data on that panorama and saves it in a variable (by using React Hooks) called panoData. The way it's set up currently is that the Google Maps API finds the 'best' panorama within the given radius.
+                            I would like to change this to finding the nearest panorama to the coordinates, and that is something that a future version of 
+                            this application would have. 
+                        </p>
+                        <p>
+                            At this point, the variable panoData should have the data of the panorama view. The data includes things like the coordinates of the 
+                            panorama, the images themselves, and more. Once we panoData is not Null, the Individual page renders the 
+                            <a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/components/panorama.js" target="_blank">
+                                PanoramaViewer component. </a>
+                            This component takes the panoData as a parameter and actually generates the panoramic view, displaying it on the user's screen.
+                            
+                        </p>
+                    </div>
+                    <div class="feature-overview">
+                        <h3>Favorites Page</h3>
+                        <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/Favorites.js" target="_blank">Link to the favorites page code</a></p>
+                        <p>
+                            I added the ability for the users to save panoramas they find interesting to the website for future users to look at. This 
+                            is done by making use of MongoDB. The MongoDB table contains the Latitude, Longitude and Date Generated data on the panorama. 
+                            It also allows the user to create a small (less than 25 characters) description of the panorama. Lastly, it allows users 
+                            to view that saved panorama.
+                        </p>
+                    </div>
+                    <div class="feature-overview">
+                        <h3>ChatGPT API Page</h3>
+                        <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/CoordinateGenerationPage.js" target="_blank">Link to ChatGPT API Page</a></p>
+                        <p>
+                            Finally, I included a page where the user can interact with ChatGPT and try to generate coordinates by giving a prompt. The hope
+                            was for the user to be able to give a prompt like "The coldest place on Earth" and the app finds a panorama in the North or South Pole, 
+                            however I have found prompts that vague usually don't work. The API uses the gpt-3.5-turbo model, so when future models become
+                            available for API, there is a chance the user can be more vague. 
+                        </p>
+                        <p>
+                            When the prompt does work, I have set up the API call to return the latitude and longitude coordinates generated by the model. 
+                            The program that uses those coordinates to navigate to the Individual page the same way it would if the user clicked on the MapComponent. 
+                        </p>
+                    </div>
+                </div>
+    </div>
+
+    <footer>
+        &copy; 2023 Jack Dugan. All rights reserved.
+    </footer>
+</body>
+
+</html>
