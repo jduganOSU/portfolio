@@ -84,7 +84,7 @@ footer, .content-wrap::after {
 }
 
 .project-phase {
-    margin: 15px;
+    margin: 25px;
 }
 
 .project-overview-section {
@@ -95,6 +95,9 @@ footer, .content-wrap::after {
     margin: 25px;
 }
 
+.final-thoughts {
+    margin: 25px;
+}
 
 /* Featured projects layout */
 .featured-projects {
@@ -122,4 +125,9 @@ footer, .content-wrap::after {
 
 .project-link:hover {
     background-color: #555;
+}
+
+/* For unvisited links */
+a {
+    color: blue;  /* Change to your desired color for unvisited links */
 }

@@ -26,8 +26,11 @@
                 <!-- Project Big Picture Section -->
                 <div class="project-overview-section">
                     <h2>Panorama Project</h2>
+                    <p><a href="https://github.com/jduganOSU/panoramaProject-solo" target="_blank">
+                        View the project github repo.
+                    </a></p>
                     <p class="project-description">
-                        The Panorama Project was an idea I had for an application, mostly just to test myself to see if I could do it. 
+                        The Panorama Project was an idea I had for an application, mostly as a challenge to myself. 
                         While not perfect, I am happy with the project and think it is about 90% of what would be the finished product. 
                     </p>
                     <p>
@@ -56,7 +59,7 @@
                     <div class="feature-overview">
                         <h3>Homepage</h3>
                         <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/Homepage.js" target="_blank">
-                            Link to the Homepage code.
+                            View the code for the hompage.
                         </a></p>
                         <p>
                             The application opens up to the homepage. There are some simple instructions on the 
@@ -64,7 +67,7 @@
                             The homepage code is simple, but contains 
                             a component called MapComponent. 
                             <a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/components/worldmap.js" target="_blank">
-                                Here is the code to the MapComponent.
+                                View the code for the MapComponent.
                             </a>
                             The MapComponent is a Google Maps API Map. There is functionality within 
                             the MapComponent code that allows the user to click on the map, and the coordinates of that click are 
@@ -77,7 +80,7 @@
                     <div class="feature-overview">
                         <h3>Individual Page</h3>
                         <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/Individual.js" target="_blank">
-                            Link to the Individual Page code
+                            View the code for the Individual Page
                         </a></p>
                         <p>
                             Next we go to the individual page. As stated earlier, the individual page makes use of the latitude and longitude coordinates
@@ -89,7 +92,7 @@
                         </p>
                         <p>
                             At this point, the variable panoData should have the data of the panorama view. The data includes things like the coordinates of the 
-                            panorama, the images themselves, and more. Once we panoData is not Null, the Individual page renders the 
+                            panorama, the images themselves, and more. Once panoData is not Null, the Individual page renders the 
                             <a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/components/panorama.js" target="_blank">
                                 PanoramaViewer component. </a>
                             This component takes the panoData as a parameter and actually generates the panoramic view, displaying it on the user's screen.
@@ -98,7 +101,7 @@
                     </div>
                     <div class="feature-overview">
                         <h3>Favorites Page</h3>
-                        <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/Favorites.js" target="_blank">Link to the favorites page code</a></p>
+                        <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/Favorites.js" target="_blank">View the Favorites Page code</a></p>
                         <p>
                             I added the ability for the users to save panoramas they find interesting to the website for future users to look at. This 
                             is done by making use of MongoDB. The MongoDB table contains the Latitude, Longitude and Date Generated data on the panorama. 
@@ -108,7 +111,7 @@
                     </div>
                     <div class="feature-overview">
                         <h3>ChatGPT API Page</h3>
-                        <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/CoordinateGenerationPage.js" target="_blank">Link to ChatGPT API Page</a></p>
+                        <p><a href="https://github.com/jduganOSU/panoramaProject-solo/blob/main/frontend/src/pages/CoordinateGenerationPage.js" target="_blank">View the ChatGPT API Page code</a></p>
                         <p>
                             Finally, I included a page where the user can interact with ChatGPT and try to generate coordinates by giving a prompt. The hope
                             was for the user to be able to give a prompt like "The coldest place on Earth" and the app finds a panorama in the North or South Pole, 
@@ -117,7 +120,7 @@
                         </p>
                         <p>
                             When the prompt does work, I have set up the API call to return the latitude and longitude coordinates generated by the model. 
-                            The program that uses those coordinates to navigate to the Individual page the same way it would if the user clicked on the MapComponent. 
+                            The program then uses those coordinates to navigate to the Individual page the same way it would if the user clicked on the MapComponent. 
                         </p>
                     </div>
                 </div>
