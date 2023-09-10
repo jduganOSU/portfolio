@@ -1,27 +1,27 @@
-Panorama Project
-Welcome to the Panorama Project! Dive into a world of breathtaking panoramic views. This web application lets users explore and save their favorite panoramas, providing an immersive experience of landscapes and cityscapes.
+# Panorama
 
+Panorama is a full-stack web application that integrates Google Maps and OpenAI's GPT-3 to generate and display panoramic views based on user input.
 
-Features
-Interactive Maps: Powered by the Google Maps API, users can explore different locations around the globe in a panoramic view.
+## Features
 
-Chat with AI: With the integration of OpenAI's API, users can describe a place they would like to see, and the 
-application generates the panorama based on the user's description.
+- Interactive Google Map for users to select locations.
+- Integration with OpenAI's GPT-3 to generate coordinates based on user's description.
+- Display of panoramic views of selected or generated locations.
+- A favorites page where users can view their favorite panoramas.
+- Continuous integration/continuous deployment (CI/CD) workflow for deployment on Heroku.
 
-Save Favorites: Users can save their favorite panorama they find most interesting. Then all users of the wesbite can 
-see a list of all the panoramas our users loved. 
+## Tech Stack
 
+- Frontend: React.js for building the user interface, CSS for styling.
+- Backend: Express.js and Node.js for handling requests and responses.
+- Database: MongoDB for storing user's favorite panoramas.
+- APIs: Google Maps API for map and panorama generation, OpenAI's GPT-3 API for generating coordinates based on user's description.
+- Deployment: Heroku.
 
-How It Works
-Exploring Panoramas: The application interfaces with the Google Maps API to fetch panoramic images. Users can navigate and explore these images with a simple click on the map. 
+## Usage
 
-AI Interaction: Users can describe a location they would like to see, and ChatGPT will generate a list of coordinates based on 
-the user prompt. From there, the application will take the coordinates and generate the nearest panoramic view.
+1. Navigate to the homepage and click on any location on the map to generate a panoramic view.
+2. Enter a description of a location to generate coordinates and a panoramic view.
+3. Click on the "Add to Favorites" button to add a panorama to your favorites.
+4. Navigate to the favorites page to view your favorite panoramas.
 
-Database Interaction: Users can save their favorite panoramas. These are stored in a MongoDB database, and users view the list of all panoramas our users found interesting. 
-
-Tech Stack
-Backend: Node.js, Express
-Database: MongoDB
-Frontend: React, CSS
-External APIs: Google Maps, OpenAI

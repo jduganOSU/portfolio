@@ -1,13 +1,26 @@
-Organ Transplant Tracking Application
-Overview
-This application aids in managing and tracking organ transplants by maintaining information about donors, recipients, organs, and transplantation events. Developed using Node.js, Express, and Handlebars, it serves as a valuable tool for hospitals and medical organizations.
+# Organ Donation Registry System
 
-Features
-Dashboard: A centralized interface to view all transplant-related data.
-Organ Management: Add, update, or remove details about available organs.
-Recipient Information: Track all organ recipients with vital information like blood type, priority, and medical condition.
-Donor Information: Register and manage donors, with an emphasis on vital statistics and organ compatibility.
-Transplantation Tracking: Monitor ongoing and completed transplants.
-Matchmaking: Helps in finding the best organ-recipient match based on specific criteria.
+## Description
 
-Created by Jack Dugan and Michelle Huang August 2023.
+The Organ Donation Registry System is a comprehensive web application designed to manage and streamline the process of organ donation and transplantation. The application provides a user-friendly interface for managing donors, recipients, organs, and transplants, and includes a matching feature to pair organ donors with recipients.
+
+## Features
+
+- Donor and Recipient Management: Add, view, and manage organ donors and recipients.
+- Organ Management: Keep track of all organs available for transplantation.
+- Transplant Management: Manage the transplantation process.
+- Organ-Recipient Matching: Match available organs with suitable recipients.
+- User-Friendly Interface: Clean, intuitive interface with easy navigation.
+
+
+## Usage
+
+Navigate to the different pages using the navigation bar at the top of the page. Add new donors, recipients, or organs using the forms provided. View existing donors, recipients, or organs in the tables on each page.
+
+## Technologies Used
+
+- Node.js
+- Express.js
+- Handlebars.js
+- AJAX
+- CSS
