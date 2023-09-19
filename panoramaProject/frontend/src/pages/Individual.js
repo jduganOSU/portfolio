@@ -21,13 +21,10 @@ const Individual = (props) => {
   useEffect(() => {
     if (window.google) {
       const sv = new window.google.maps.StreetViewService();
-
-      sv.getPanorama({
-        location: { lat: latitude, lng: longitude },
-        radius: 10000000
-      }).then(result => {
-        if (result && result.data) {
-          setPanoData(result.data);
+  
+      sv.getPanoramaByLocation({ lat: latitude, lng: longitude }, 1000000, (data, status) => {
+        if (status === window.google.maps.StreetViewStatus.OK) {
+          setPanoData(data);
         } else {
           console.error("No Street View data found for this location.");
         }
